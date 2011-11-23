@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.github.com/jagui/Juanagui.Validation/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/jagui/Juanagui.Validation</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2011 juanagui.com</copyright>
+    <tags>validation</tags>
+  </metadata>
+</package>
