@@ -19,6 +19,13 @@ namespace Juanagui.Validation.Tests
         }
 
         [TestMethod]
+        public void Notification_AddNotificationMessage_GetViaIndexer()
+        {
+            var notification = new Notification { { "field", "was invalid" } };
+            Assert.AreEqual("was invalid", notification["field"]);
+        }
+
+        [TestMethod]
         public void Notification_AddNotificationMessage_IsNotValid()
         {
             var notification = new Notification { { "field", "was invalid" } };

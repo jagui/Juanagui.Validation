@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Juanagui.Validation
 {
-    public interface INotification
+    public interface INotification : IEnumerable<NotificationMessage>
     {
-        IEnumerator<NotificationMessage> GetEnumerator();
+        String this[String field] { get; }
 
         void Add(string fieldName, string message);
 

@@ -19,6 +19,11 @@ namespace Juanagui.Validation
             return _notificationMessages.GetEnumerator();
         }
 
+        public string this[string field]
+        {
+            get { return _notificationMessages.Where(msg => msg.PropertyName.Equals(field)).Select(msg => msg.ErrorMessage).FirstOrDefault(); }
+        }
+
         public void Add(string fieldName, string message)
         {
             _notificationMessages.Add(new NotificationMessage(fieldName, message));
