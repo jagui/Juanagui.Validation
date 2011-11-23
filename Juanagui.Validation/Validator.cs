@@ -16,7 +16,7 @@ namespace Juanagui.Validation
             if (!ValidationAttributesMap.ContainsKey(type))
             {
 
-                ValidationAttributesMap[Key] = (from property in type.GetProperties()
+                ValidationAttributesMap[type] = (from property in type.GetProperties()
                                                 let attributes = Attribute.GetCustomAttributes(property, typeof(ValidationAttribute))
                                                 from ValidationAttribute attribute in attributes
                                                 select new NamedValidationAttribute(attribute, property)).ToList();
