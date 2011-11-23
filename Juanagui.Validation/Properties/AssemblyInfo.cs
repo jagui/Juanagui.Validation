@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Juanagui.Validation")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Validation Framework built on System.Component.DataAnnotations")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("juanagui.com")]
 [assembly: AssemblyProduct("Juanagui.Validation")]
-[assembly: AssemblyCopyright("Copyright ©  2011")]
+[assembly: AssemblyCopyright("Copyright © juanagui.com 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
