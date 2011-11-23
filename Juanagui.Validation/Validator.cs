@@ -13,13 +13,15 @@ namespace Juanagui.Validation
         // each ValidationAttribute to the correct Property
         private static IEnumerable<NamedValidationAttribute> FindAttributes(Type type)
         {
-            if (ValidationAttributesMap.ContainsKey(type))
-                return ValidationAttributesMap[type];
+            if (!ValidationAttributesMap.ContainsKey(type))
+            {
 
-            return (from property in type.GetProperties()
-                    let attributes = Attribute.GetCustomAttributes(property, typeof (ValidationAttribute))
-                    from ValidationAttribute attribute in attributes
-                    select new NamedValidationAttribute(attribute, property)).ToList();
+                ValidationAttributesMap[Key] = (from property in type.GetProperties()
+                                                let attributes = Attribute.GetCustomAttributes(property, typeof(ValidationAttribute))
+                                                from ValidationAttribute attribute in attributes
+                                                select new NamedValidationAttribute(attribute, property)).ToList();
+            }
+            return ValidationAttributesMap[type];
         }
 
         public static void Validate(object target, INotification notification)
