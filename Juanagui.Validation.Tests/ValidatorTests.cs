@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +10,6 @@ namespace Juanagui.Validation.Tests
     [TestClass]
     public class ValidatorTests
     {
-        private class Validatable
-        {
-            [Required]
-            public String Required { get; set; }
-        }
-
         [TestMethod]
         public void Validator_ValidateInvalidClass_NotificationIsAskedToAddANotificationMessage()
         {

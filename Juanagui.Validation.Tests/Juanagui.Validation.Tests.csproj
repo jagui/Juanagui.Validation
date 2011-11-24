@@ -50,9 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GreaterThanZeroAttributeTests.cs" />
+    <Compile Include="IDataErrorInfoExtensionsTests.cs" />
     <Compile Include="NotificationMessageTests.cs" />
     <Compile Include="NotificationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validatable.cs" />
     <Compile Include="ValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
