@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Juanagui.Validation
 {
-    public class Notification : IEnumerable<NotificationMessage>, INotification
+    public class Notification : INotification
     {
         private readonly List<NotificationMessage> _notificationMessages = new List<NotificationMessage>();
 
@@ -32,6 +32,11 @@ namespace Juanagui.Validation
         public Boolean IsValid()
         {
             return !_notificationMessages.Any();
+        }
+
+        public override string ToString()
+        {
+            return String.Concat(this);
         }
     }
 }
