@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Juanagui.Validation.Tests
@@ -16,6 +17,17 @@ namespace Juanagui.Validation.Tests
             var notificationMessage = notification.Single();
             Assert.AreEqual("was invalid", notificationMessage.ErrorMessage);
             Assert.AreEqual("field", notificationMessage.PropertyName);
+        }
+
+        [TestMethod]
+        public void Notification_AddNotificationMessage_ReadError()
+        {
+            var notification = new Notification
+                                   {
+                                       {"field", "was invalid"},
+                                       {"other field", "was invalid too"}
+                                   };
+            notification.ToString().Should().Be("was invalid, was invalid too");
         }
 
         [TestMethod]

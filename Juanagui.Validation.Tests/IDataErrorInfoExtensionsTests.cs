@@ -13,28 +13,28 @@ namespace Juanagui.Validation.Tests
         [TestMethod]
         public void GetErrorData()
         {
-            var validatable = new ValidateableForTests();
-            validatable.GetErrorData("RequiredProperty").Should().Contain("RequiredProperty");
-            validatable.RequiredProperty = "valid";
-            validatable.GetErrorData("RequiredProperty").Should().BeNull();
+            var validateableForTests = new ValidateableForTests();
+            validateableForTests.GetErrorData("RequiredProperty").Should().Contain("RequiredProperty");
+            validateableForTests.RequiredProperty = "valid";
+            validateableForTests.GetErrorData("RequiredProperty").Should().BeNull();
         }
 
         [TestMethod]
         public void GetAllErrors()
         {
-            var validatable = new ValidateableForTests();
-            validatable.GetAllErrors(" ").Should().Contain("RequiredProperty");
-            validatable.RequiredProperty = "valid";
-            validatable.GetAllErrors(" ").Should().BeEmpty();
+            var validateableForTests = new ValidateableForTests();
+            validateableForTests.GetAllErrors(" ").Should().Contain("RequiredProperty");
+            validateableForTests.RequiredProperty = "valid";
+            validateableForTests.GetAllErrors(" ").Should().BeEmpty();
         }
 
         [TestMethod]
         public void IsValid()
         {
-            var validatable = new ValidateableForTests();
-            validatable.IsValid().Should().BeFalse();
-            validatable.RequiredProperty = "valid";
-            validatable.IsValid().Should().BeTrue();
+            var validateableForTests = new ValidateableForTests();
+            validateableForTests.IsValid().Should().BeFalse();
+            validateableForTests.RequiredProperty = "valid";
+            validateableForTests.IsValid().Should().BeTrue();
         }
     }
 }

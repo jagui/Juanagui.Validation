@@ -36,7 +36,9 @@ namespace Juanagui.Validation
 
         public override string ToString()
         {
-            return String.Concat(this);
+
+
+            return String.Join(", ", _notificationMessages.Select(nm => nm.ErrorMessage));
         }
     }
 }
