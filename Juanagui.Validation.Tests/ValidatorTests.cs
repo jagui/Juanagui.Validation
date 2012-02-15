@@ -14,18 +14,18 @@ namespace Juanagui.Validation.Tests
         public void Validator_ValidateInvalidClass_NotificationIsAskedToAddANotificationMessage()
         {
             var notification = MockRepository.GenerateMock<INotification>();
-            var validatable = new Validatable {Required = null};
+            var validatable = new ValidateableForTests {RequiredProperty = null};
             Validator.Validate(validatable, notification);
-            notification.AssertWasCalled(n => n.Add(Arg<String>.Is.Equal("Required"), Arg<String>.Is.Anything));
+            notification.AssertWasCalled(n => n.Add(Arg<String>.Is.Equal("RequiredProperty"), Arg<String>.Is.Anything));
         }
 
         [TestMethod]
         public void Validator_ValidateValidClass_NotificationIsNotAskedToAddANotificationMessage()
         {
             var notification = MockRepository.GenerateMock<INotification>();
-            var validatable = new Validatable { Required = "validValue" };
+            var validatable = new ValidateableForTests { RequiredProperty = "validValue" };
             Validator.Validate(validatable, notification);
-            notification.AssertWasNotCalled(n => n.Add(Arg<String>.Is.Equal("Required"), Arg<String>.Is.Anything));
+            notification.AssertWasNotCalled(n => n.Add(Arg<String>.Is.Equal("RequiredProperty"), Arg<String>.Is.Anything));
         }
     }
 }

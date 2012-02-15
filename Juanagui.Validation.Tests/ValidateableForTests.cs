@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Juanagui.Validation.Tests
 {
-    internal class Validatable : IDataErrorInfo
+    internal class ValidateableForTests : IDataErrorInfo
     {
         [Required]
-        public String Required { get; set; }
+        public String RequiredProperty { get; set; }
 
         public string this[string columnName]
         {
